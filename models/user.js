@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   user.init({
     email: {
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      primaryKey: true
     },
     password: {
       type: DataTypes.STRING,
@@ -26,7 +27,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'user'
+    modelName: 'user',
+    underscored: true
   });
   return user;
 };
