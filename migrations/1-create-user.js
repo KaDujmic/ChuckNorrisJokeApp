@@ -20,6 +20,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      role_id: {
+        type: Sequelize.INTEGER,
+        defaultValue: 2
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE
@@ -31,6 +35,6 @@ module.exports = {
     });
   },
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('user');
+    await queryInterface.dropTable('user', { cascade: true });
   }
 };
