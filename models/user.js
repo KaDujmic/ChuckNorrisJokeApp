@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'user',
     underscored: true,
     hooks: {
-      afterCreate: async (user, options) => {
+      beforeCreate: async (user, options) => {
         user.password = await bcrypt.hash(user.password, 2);
       }
     }
