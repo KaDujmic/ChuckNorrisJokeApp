@@ -52,7 +52,7 @@ exports.signup = async (req, res) => {
     throw new ValidationError('Password and password confirm do not match');
   }
   // 3) Create the user
-  const currentUser = await user.create({ firstName, lastName, email, password });
+  const currentUser = await user.create({ firstName, lastName, email, password, roleId: 2 });
 
   // 4) Create jwt and send the response to login the user
   createSendToken(currentUser, 200, res, req);
