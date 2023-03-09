@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon -r dotenv/config app dotenv_config_path=.env.development",
-    "migrate:dev": "cd db && npx sequelize-cli db:migrate --env=development",
-    "seed:dev": " cd db && npx sequelize-cli db:seed:all --env=development",
-    "undo:migrate:dev": "cd db && npx sequelize-cli db:migrate:undo:all --env=development"
+    "migrate:dev": "npx sequelize-cli db:migrate --env=development",
+    "seed:dev": "npx sequelize-cli db:seed:all --env=development",
+    "undo:migrate:dev": "npx sequelize-cli db:migrate:undo:all --env=development"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,8 @@
 const envArg = process.argv.find(x => x.startsWith('--env'));
 if (envArg) {
   const env = envArg.split('=')[1];
-  require('dotenv').config({ path: `../.env.${env}` });
+  require('dotenv').config({ path: `./.env.${env}` });
+  console.log(process.env.DB_PASSWORD);
 }
 
 module.exports =
