@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "09eb5713-909c-4e7a-9102-b8ecf9130551",
 		"name": "ChuckNorris",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23162147"
 	},
@@ -27,7 +28,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"mike@example.com\",\n    \"password\": \"test1234\"\n}",
+							"raw": "{\n    \"email\": \"john12345@example.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -50,12 +51,23 @@
 				},
 				{
 					"name": "SignUp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"jwt\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"john1@example.com\",\n    \"password\": \"1234\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"passwordConfirm\": \"1234\"\n}",
+							"raw": "{\n    \"email\": \"john12345@example.com\",\n    \"password\": \"1234\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"passwordConfirm\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -195,7 +207,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:{{port}}/user/john1@example.com",
+							"raw": "http://localhost:{{port}}/user/mike@example.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -203,7 +215,7 @@
 							"port": "{{port}}",
 							"path": [
 								"user",
-								"john1@example.com"
+								"mike@example.com"
 							]
 						}
 					},
